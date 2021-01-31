@@ -1,0 +1,38 @@
+.remaining-balance-box {
+	border: 2px solid #05396b;
+	border-radius: 2%;
+	display: flex;
+	height: 20vh;
+	width: 95%;
+	margin: 10px auto;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.amounts {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+span {
+	color: #05396b;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+h2 {
+	letter-spacing: 2px;
+}
+
+.total-payments {
+	color: #5eda96;
+}
+
+.total-balance {
+	color: #2f2fa1;
+}
+
+.total-obligation {
+	color: #f64c71;
+}
