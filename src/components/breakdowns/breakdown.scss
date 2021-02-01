@@ -4,16 +4,28 @@
   display: flex;
   background: #edf5e0;
   justify-content: space-between;
-  align-items: center;
   margin: 10px auto;
   border-left: 5px solid #389583;
   padding-left: 20px;
   padding-right: 20px;
+  align-items: center;
 
   .computation {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+
+    .current-balance {
+      color: #2f2fa1;
+    }
+
+    .amount-paid {
+      color: #5cdb94;
+    }
+  }
+
+  .new-balance {
+    color: #f64c71;
   }
 }
