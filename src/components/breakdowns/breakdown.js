@@ -1,23 +1,28 @@
 import "./breakdown.scss";
 
-function Breakdown() {
+function Breakdown({
+	amount_paid,
+	currentMonth_balance,
+	new_balance,
+	paid_date,
+}) {
 	return (
 		<div className='payment-history'>
 			<div className='breakdown'>
-				<h5 className='date'>February, 14, 2020</h5>
+				<h5 className='date'>{paid_date}</h5>
 
 				<div className='current-balance'>
-					<h4 className='current-balance'>₱7200</h4>
+					<h4 className='current-balance'>{currentMonth_balance}</h4>
 					<span>current balance</span>
 				</div>
 
 				<div className='amount-paid'>
-					<h4 className='amount-paid'>₱500</h4>
+					<h4 className='amount-paid'>{amount_paid}</h4>
 					<span>amount paid</span>
 				</div>
 
 				<div className='remaining-balance'>
-					<h4 className='new-balance'>₱6700</h4>
+					<h4 className='new-balance'>{new_balance}</h4>
 					<span>new balance</span>
 				</div>
 			</div>

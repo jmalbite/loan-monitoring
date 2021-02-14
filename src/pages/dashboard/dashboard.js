@@ -10,17 +10,15 @@ function Dashboard() {
 
 	//getting data from cloud firestore
 	const ref = firebase.firestore().collection("dashBoardStatus");
-	console.log(ref); //display data reference
 
 	function getStatusDashBoard() {
 		ref.onSnapshot((querySnapshot) => {
 			const items = [];
-
 			querySnapshot.forEach((doc) => {
 				items.push(doc.data());
 			});
 
-			setBoardStatus(items);
+			setBoardStatus(items); //transfer data to setBoard status
 		});
 	}
 
@@ -31,8 +29,8 @@ function Dashboard() {
 	return (
 		<>
 			<div className='remaining-balance-box'>
-				{boardStatus.map((amounts) => (
-					<h1>{amounts.current_balance}</h1>
+				{boardStatus.map(({ id, ...otherAmounts }) => (
+					<StatusAmount key={id} {...otherAmounts} />
 				))}
 			</div>
 		</>
