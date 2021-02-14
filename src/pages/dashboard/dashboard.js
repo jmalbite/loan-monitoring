@@ -9,13 +9,13 @@ function Dashboard() {
 	const [boardStatus, setBoardStatus] = useState([]);
 
 	//getting data from cloud firestore
-	const ref = firebase.firestore().collection("dashBoardStatus");
+	const db = firebase.firestore().collection("dashBoardStatus");
 
 	function getStatusDashBoard() {
-		ref.onSnapshot((querySnapshot) => {
+		db.onSnapshot((querySnapshot) => {
 			const items = [];
 			querySnapshot.forEach((doc) => {
-				items.push(doc.data());
+				items.push({ ...doc.data(), id: doc.id });
 			});
 
 			setBoardStatus(items); //transfer data to setBoard status

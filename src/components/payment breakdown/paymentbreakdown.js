@@ -14,7 +14,6 @@ function Paymentbreakdown() {
 			const items = [];
 			querySnapshot.forEach((doc) => {
 				items.push({ ...doc.data(), id: doc.id });
-				console.log(doc.id);
 			});
 			setPaymentHistory(items);
 		});
