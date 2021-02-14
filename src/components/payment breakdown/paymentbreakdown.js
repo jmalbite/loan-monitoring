@@ -13,7 +13,8 @@ function Paymentbreakdown() {
 		db.onSnapshot((querySnapshot) => {
 			const items = [];
 			querySnapshot.forEach((doc) => {
-				items.push(doc.data());
+				items.push({ ...doc.data(), id: doc.id });
+				console.log(doc.id);
 			});
 			setPaymentHistory(items);
 		});
@@ -27,8 +28,8 @@ function Paymentbreakdown() {
 		<>
 			<div className='payment-breakdowns'>
 				<h2>payment history</h2>
-				{paymentHistory.map(({ history_id, ...history }) => (
-					<Breakdown key={history_id} {...history} />
+				{paymentHistory.map(({ id, ...history }) => (
+					<Breakdown key={id} {...history} />
 				))}
 			</div>
 		</>
